@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Calculator</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/calculator.css' %}">
+</head>
+<body>
+	<header>
+	</header>
+	<div class="container">
+		<h1>Калькулятор</h1>
+		<div class="table">
+			<table>
+				<thead>
+					<tr>
+						<th class="first-column">Группа животных</th>
+						{% for field in fields %}
+						<th>{{ field }}</th>
+						{% endfor %}
+					</tr>
+				</thead>
+				<tbody>
+					<tr id="target-norm">
+						<td>
+							<select id="target">
+								<option value="">Выберите</option>
+								{% for norm in norms %}
+								<option title="{{ norm.target }}" value="{{ norm.id }}">{{ norm.target }}</option>
+								{% endfor %}
+							</select>
+						</td>
+					</tr>
+					<tr id="target-ration">
+						<td>
+							<b>В рационе</b>
+						</td>
+					</tr>
+					<tr id="target-diff">
+						<td>
+							<b>Отклонение от нормы</b>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<h3>Рацион</h3>
+		<div class="table">
+			<table class="ration">
+				<thead>
+					<tr>
+						<th class="first-column">Корм</th>
+						{% for field in fields %}
+						<th>{{ field }}</th>
+						{% endfor %}
+					</tr>
+				</thead>
+				<tbody>
+					<tr id="add-component">
+						<td>
+							<select id="nutrition">
+								<option value="">Выберите</option>
+								{% for nutr in nutrs %}
+								<option title="{{ nutr.name }}" value="{{ nutr.id }}">{{ nutr.name }}</option>
+								{% endfor %}
+							</select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="save-ration">
+			<button class="save-button">Сохранить рацион</button>
+		</div>
+	</div>
+	<footer>
+		Подвал
+	</footer>
+</body>
+<script>
+	var FIELDS_LEN = {{ fields_len }};
+	var GET_NORM_URL = "{% url 'get_norm_base' %}";
+	var GET_NUTR_URL = "{% url 'get_nutr_base' %}";
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% load static %}
+<script src="{% static 'js/calculator.js' %}"></script>
+</html>

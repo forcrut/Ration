@@ -1,0 +1,109 @@
+/*header*/
+header {
+	width: 100%;
+	margin: 0 50%;
+}
+/*h1*/
+h1 {
+	text-align: center;
+}
+/*body*/
+body {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100vh;
+	margin: 0;
+	overflow-x: hidden;
+}
+/*container*/
+.container {
+	padding-left: 16px;
+	padding-right: 16px;
+	flex: 1;
+}
+/*wrapper*/
+.wrapper {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+/*select*/
+select {
+	max-width: 200px;
+	text-align: center;
+	font-size: 16px;
+	text-overflow: ellipsis;
+}
+/*footer*/
+footer {
+	min-width: 100%;
+	height: 100px;
+	background-color: black;
+}
+/*table*/
+.first-column {
+	min-width: 200px;
+}
+.table {
+	overflow-x: auto;
+}
+table {
+	border: none;
+	margin-bottom: 20px;
+	border-collapse: separate;
+}
+table thead th {
+	font-weight: bold;
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	background: #EDEDED;
+	font-size: 14px;
+	border-top: 1px solid #ddd;
+}
+table tr th:first-child, table tr td:first-child {
+	border-left: 1px solid #ddd;
+}
+table tr th:last-child, table tr td:last-child {
+	border-right: 1px solid #ddd;
+}
+table tbody td {
+	text-align: left;
+	border: none;
+	padding: 10px 15px;
+	font-size: 14px;
+	vertical-align: top;
+}
+table tbody tr:nth-child(even) {
+	background: #F8F8F8;
+}
+table tbody tr:last-child td{
+	border-bottom: 1px solid #ddd;
+}
+/*save button*/
+.save-button {
+		background-color: #4CAF50; /* Зелёный фон */
+		border: none;
+		color: white; /* Белый текст */
+		padding: 10px 20px; /* Отступы */
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 14px;
+		margin-top: 20px;
+		margin-bottom: 30px;
+		cursor: pointer; /* Курсор в виде руки */
+		border-radius: 5px; /* Скругление углов */
+		transition: background-color 0.3s; /* Плавный переход цвета фона */
+}
+
+.save-button:hover {
+		background-color: #45a049; /* Тёмно-зелёный при наведении */
+}
+/*rest*/
+.hidden {
+	display: none;
+}
