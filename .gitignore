@@ -12,3 +12,9 @@ env/
 
 # База данных
 *.sqlite3
+
+# idea
+.idea/
+
+# git
+.git/
